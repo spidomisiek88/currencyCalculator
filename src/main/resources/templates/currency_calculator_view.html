@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${result}"></h1>
+
+
+<form action="/" method="post">
+    Nazwa waluty do zamiany (ISO): <input type="text" name="currency"> <br/>
+    Ilość pieniędzy w PLN: <input type="text" name="pln"> <br/>
+    <input type="submit" value="Przelicz">
+</form>
+</body>
+</html>
