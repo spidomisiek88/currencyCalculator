@@ -28,8 +28,38 @@ public class ParserCurrencyRateTableService {
     private Document document;
     private List<CurrencyRateTable> currencyRateTablesList;
 
-    public void createCurrencyRateTablesList() {
+    public void createCurrencyRateTablesList(List<String> fileNameList) {
 
+        for (String fileName : fileNameList) {
+            createDocument(fileName);
+            currencyRateTablesList.add(createCurrencyRateTable());
+        }
+    }
+
+    public List<Double> getListBuyRare(String currencyCode) {
+        List<Double> currencyBuyRateList = new ArrayList<Double>();
+
+        for (CurrencyRateTable currencyRateTable : currencyRateTablesList) {
+            for (CurrencyRate currencyRate : currencyRateTable.getCurrencyRateList()) {
+                if (currencyCode.equals(currencyRate.getCurrencyISOCode()))
+                    currencyBuyRateList.add(currencyRate.getBuyingRate());
+            }
+        }
+
+        return currencyBuyRateList;
+    }
+
+    public List<Double> getListSalleRare(String currencyCode) {
+        List<Double> currencySalleRateList = new ArrayList<Double>();
+
+        for (CurrencyRateTable currencyRateTable : currencyRateTablesList) {
+            for (CurrencyRate currencyRate : currencyRateTable.getCurrencyRateList()) {
+                if (currencyCode.equals(currencyRate.getCurrencyISOCode()))
+                    currencySalleRateList.add(currencyRate.getSellingRate());
+            }
+        }
+
+        return currencySalleRateList;
     }
 
     public void createDocument(String fileName) {
