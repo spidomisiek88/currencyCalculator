@@ -1,4 +1,4 @@
-package pl.michalpajak.currencyCalculator.models.services;
+package pl.michalpajak.currencyCalculator.services;
 
 import lombok.Data;
 import org.springframework.stereotype.Service;

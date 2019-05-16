@@ -10,7 +10,7 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 import pl.michalpajak.currencyCalculator.models.CurrencyRate;
 import pl.michalpajak.currencyCalculator.models.CurrencyRateTable;
-import pl.michalpajak.currencyCalculator.models.services.ParserCurrencyRateTableService;
+import pl.michalpajak.currencyCalculator.services.ParserCurrencyRateTableService;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;

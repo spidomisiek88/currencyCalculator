@@ -1,4 +1,4 @@
-package pl.michalpajak.currencyCalculator.models.services;
+package pl.michalpajak.currencyCalculator.services;
 
 import org.springframework.stereotype.Service;
 
