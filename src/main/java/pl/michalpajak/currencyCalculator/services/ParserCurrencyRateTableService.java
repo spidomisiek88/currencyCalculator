@@ -29,6 +29,7 @@ public class ParserCurrencyRateTableService {
     private List<CurrencyRateTable> currencyRateTablesList;
 
     public void createCurrencyRateTablesList(List<String> fileNameList) {
+        currencyRateTablesList = new ArrayList<CurrencyRateTable>();
 
         for (String fileName : fileNameList) {
             createDocument(fileName);
@@ -126,4 +127,5 @@ public class ParserCurrencyRateTableService {
 
         return currencyRate;
     }
+
 }
